@@ -27,7 +27,7 @@ someOtherFunction();
 
 Here is an example on how to use the preprocessor ant task in a build script:
 {{{
-<preprocess infile="file.js" ourfile="file.processed.js" defines="value1,value2" />
+<preprocess infile="file.js" outfile="file.processed.js" defines="value1,value2" />
 }}}
 
 The preprocessor enables you to include/exclude code depending in defined values. This is very useful if you want to for example remove all debug code when making a distribution package.
@@ -47,7 +47,7 @@ This task compresses the specified script using the YUICompressor package. The Y
 
 Here is an example on how to use the yuicompressor ant task in a build script:
 {{{
-<yuicompress infile="file.js" ourfile="file.min.js" />
+<yuicompress infile="file.js" outfile="file.min.js" />
 }}}
 
 There is an example build.xml file that comes with the package. This file displays how to use the ant tasks.
