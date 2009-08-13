@@ -52,7 +52,7 @@ Here is an example on how to use the yuicompressor ant task in a build script:
 
 = moxiedoc =
 
-This task generates documentation for JavaScript projects by parsing special [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags MoxieDoc comments].
+This task generates documentation for JavaScript projects by parsing special [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags MoxieDoc comments]. This is very similar to how JavaDoc functions.
 
 == Parameters ==
  * templatedir - Location where moxiedoc can find the xsl templates.
