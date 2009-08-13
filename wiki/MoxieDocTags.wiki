@@ -31,7 +31,6 @@ Since MoxieDoc only parses comments type tags are required for all documentation
 == Optional tags ==
 There are a few other tags that are needed in special situations for example when a class extends another class.
 
-
 || * Tag * || * Details * ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#static static] || Member/class is static in other words a instance is not required. ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#member member] || Specifies that the item is a method of the current class. ||
