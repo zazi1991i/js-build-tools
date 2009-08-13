@@ -1,0 +1,44 @@
+#summary List of MoxieDoc comment tags
+
+= MoxieDoc comment tags =
+
+MoxieDoc uses Javadoc style comments to generate HTML documentation and IntelliSense files. Since JavaScript is such a dynamic language it's very hard to parse out the member names for classes it's also useful if you want to add documentation for psuedo classes that helps the user to impelement specific interfaces but there isn't really any code. So a difference between MoxieDoc and other common documentation tools like JavaDoc is that you need to specify what each item is and the name of it.
+
+== Example of MoxieDoc comment ==
+{{{
+/**
+ * Pointless function that returns a hello string.
+ *
+ * @method someMethod
+ * @param {String} arg1 Some pointless argument.
+ * @param {String} arg1 Some other pointless argument.
+ * @return {String} Some return value.
+ */
+someClass.someMethod = function(arg1, arg2) {
+   return "Hello;
+}
+}}}
+
+== Type tags ==
+Since MoxieDoc only parses comments type tags are required for all documentation blocks. All type tags requires you to specify a name after them. For example "@class MyClass".
+
+|| * Tag * || * Details * ||
+|| class || Specifies that the item is a class. ||
+|| event || Specifies that the item is an event of the current class. ||
+|| method || Specifies that the item is a method of the current class. ||
+|| property || Specifies that the item is an property of the current class. ||
+
+== Optional tags ==
+There are a few other tags that are needed in special situations for example when a class extends another class.
+
+|| * Tag * || * Details * ||
+|| [WikiSyntax#static static] || Member/class is static in other words a instance is not required. ||
+|| [WikiSyntax#member member] || Specifies that the item is a method of the current class. ||
+
+=== static ===
+
+...
+
+=== member ===
+
+...
