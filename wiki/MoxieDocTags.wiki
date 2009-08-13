@@ -23,196 +23,20 @@ someClass.prototype.someMethod = function(arg1, arg2) {
 Since MoxieDoc only parses comments type tags are required for all documentation blocks. All type tags requires you to specify a name after them. For example "@class MyClass".
 
 || * Tag * || * Details * ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#class class]    || Specifies that the item is a class. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#class event]    || Specifies that the item is an event of the current class. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#class method]   || Specifies that the item is a method of the current class. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#class property] || Specifies that the item is an property of the current class. ||
-
-==== class ====
-
-This tag specifies that the current item is a class all non class items after this one will be added to this class unless it has a @member tag.
-
-===== Example of class item =====
-{{{
-/**
- * This is a class.
- *
- * @class MyClass
- */
-function MyClass() {
-}
-}}}
-
-==== event ====
-
-This tag specifies that the item is an event. Different JS API:s has different types of event models. TinyMCE for example uses a special Dispatcher class. So this tag will describe the function callback for the event since all event models have a callback with parameters.
-
-===== Example of class item =====
-{{{
-/**
- * This is a event.
- *
- * @event onSomeThing
- * @param {String} arg1 Some arg.
- * @param {String} arg2 Some other arg.
- */
-SomeClass.onSomeThing= new tinymce.util.Dispatcher();
-}}}
-
-==== method ====
-
-This tag specifies that the item is a method of a class.
-
-===== Example of method item =====
-{{{
-/**
- * This is a method.
- *
- * @method doSomething
- * @param {String} arg1 Some arg.
- * @param {String} arg2 Some other arg.
- */
-SomeClass.doSomething = function(arg1, arg2) {
-}
-}}}
-
-==== property====
-
-
-This tag specifies that the item is a property of a class. This tag should be used together with the type tag. If it's omitted the default type will be Object.
-
-===== Example of method item =====
-{{{
-/**
- * This is a property.
- *
- * @method someProp
- * @type String
- */
-SomeClass.someProp = "Some val";
-}}}
+|| [http://code.google.com/p/js-build-tools/wiki/ClassTag class]    || Specifies that the item is a class. ||
+|| [http://code.google.com/p/js-build-tools/wiki/EventTag event]    || Specifies that the item is an event of the current class. ||
+|| [http://code.google.com/p/js-build-tools/wiki/MethodTag method]   || Specifies that the item is a method of the current class. ||
+|| [http://code.google.com/p/js-build-tools/wiki/PropertyTag property] || Specifies that the item is an property of the current class. ||
 
 == Optional tags ==
 There are a few other tags that are needed in special situations for example when a class extends another class.
 
 || * Tag * || * Details * ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#author author]            || Enables you to specify an author for a class or member. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#constructor constructor]  || Specifies that the method is a contructor. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#deprecated deprecated]    || Specifies that the member or class is old and shouldn't be used. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#extends extends]          || Enables you to specify an inheritage between two classes. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#member member]            || Enables you to specify that the member if part of another class. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#static static]            || Sets that the member or class is static. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#type type]                || Specifies the property type. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#version version]          || Enables you to set a version number when the item was introduced. ||
-
-==== author ====
-
-The tag enables you to specify an author for a class or member. This can be useful in larger project with multiple developers.
-
-===== Example of author tag ====
-{{{
-/**
- * This method is static. 
- *
- * @method someMethod
- * @author Some guy
- */
-SomeClass.someMethod = function() {
-}
-}}}
-
-==== constructor ====
-
-Specifies that the method is a constructor for the class.
-
-===== Example of constructor tag ====
-{{{
-/**
- * This method is the constructor for a class. 
- *
- * @method SomeClass
- * @constructor
- */
-SomeClass.constructor.SomeClass = function() {
-}
-}}}
-
-==== deprecated ====
-
-This tag enables you to set classes/members to be deprecated. You can specify an message to be presented to the user in the documentation for example why it's deprecated and what they should use in instead.
-
-===== Example of deprecated tag ====
-{{{
-/**
- * This method is deprecated. 
- *
- * @method someMethod
- * @deprecated This is a old method use something else.
- */
-SomeClass.someMethod = function() {
-}
-}}}
-
-==== extends ====
-
-This tag specifies that the class extends another class.
-
-===== Example of extends tag ====
-{{{
-/**
- * This is a subclass of SuperClass. 
- *
- * @class SubClass
- * @extends SuperClass
- */
-SubClass = SuperClass.extend({
-   ...
-}
-}}}
-
-==== member ====
-
-The member tag can be used to tell that a specific method/property/event is part of a specific class. For example if there is a method that gets added later on in a separate file.
-
-===== Example of member tag ====
-{{{
-/**
- * This method is static. 
- *
- * @method someMethod
- * @member someNameSpace.someClass
- */
-someNameSpace.someClass.someMethod = function() {
-};
-}}}
-
-==== static ====
-
-The static tag on classes will make all class members static. A static member is a method or property that can be accessed without the need of making an instance of the class. For example a constant or an utility method.
-
-===== Example of static method ====
-{{{
-/**
- * This method is static. 
- *
- * @method staticMethod
- * @static
- */
-someClass.staticMethod = function() {
-};
-}}}
-
-==== type ====
-
-This tag enables you to specify a type for a property. By default the type of a property will be Object.
-
-===== Example of type tag ====
-{{{
-/**
- * This method is static. 
- *
- * @property someProp
- * @type String
- */
-someClass.someProp = "";
-}}}
+|| [http://code.google.com/p/js-build-tools/wiki/AuthorTag author]            || Enables you to specify an author for a class or member. ||
+|| [http://code.google.com/p/js-build-tools/wiki/ConstructorTag constructor]  || Specifies that the method is a contructor. ||
+|| [http://code.google.com/p/js-build-tools/wiki/DeprecatedTag deprecated]    || Specifies that the member or class is old and shouldn't be used. ||
+|| [http://code.google.com/p/js-build-tools/wiki/ExtendsTag extends]          || Enables you to specify an inheritance between two classes. ||
+|| [http://code.google.com/p/js-build-tools/wiki/MemberTag member]            || Enables you to specify that the member if part of another class. ||
+|| [http://code.google.com/p/js-build-tools/wiki/StaticTag static]            || Sets that the member or class is static. ||
+|| [http://code.google.com/p/js-build-tools/wiki/TypeTag type]                || Specifies the property type. ||
+|| [http://code.google.com/p/js-build-tools/wiki/VersionTag version]          || Enables you to set a version number when the item was introduced. ||
