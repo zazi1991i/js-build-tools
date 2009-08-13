@@ -50,4 +50,30 @@ Here is an example on how to use the yuicompressor ant task in a build script:
 <yuicompress infile="file.js" outfile="file.min.js" />
 }}}
 
+= moxiedoc =
+
+This task generates documentation for JavaScript projects by parsing special [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags MoxieDoc comments].
+
+== Parameters ==
+ * templatedir - Location where moxiedoc can find the xsl templates.
+ * outdir - Output directory where the documentation is to be generated.
+ * msintellisense - (Optional) File path to where the MS IntelliSense file will be generated. This is a js file with stub data.
+
+Here is an example on how to use the yuicompressor ant task in a build script:
+{{{
+<moxiedoc outdir="docs\api" msintellisense="docs\apitinymce.vsdoc.js" templatedir="tools\templates">
+    <fileset dir="jscripts\tiny_mce\classes">
+        <include name="**/*.js" /> 
+    </fileset>
+</moxiedoc>
+}}}
+
+Using the MS IntelliSense file in Visual Studio. Add this to your ASPX file after the script that you are using in the case below TinyMCE.
+{{{
+<!-- Removes the script from page output -->
+<% if (false) { %>
+   <script type="text/javascript" src="tinymce.vsdoc.js"></script>
+<% } %>
+}}}
+
 There is an example build.xml file that comes with the package. This file displays how to use the ant tasks.
