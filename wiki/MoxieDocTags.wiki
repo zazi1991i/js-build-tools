@@ -100,7 +100,6 @@ There are a few other tags that are needed in special situations for example whe
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#constructor constructor]  || Specifies that the method is a contructor. ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#deprecated deprecated]    || Specifies that the member or class is old and shouldn't be used. ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#extends extends]          || Enables you to specify an inheritage between two classes. ||
-|| [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#final final]              || Specifies that the member is final and won't be changed for example a constant. ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#member member]            || Enables you to specify that the member if part of another class. ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#static static]            || Sets that the member or class is static. ||
 || [http://code.google.com/p/js-build-tools/wiki/MoxieDocTags#type type]                || Specifies the property type. ||
@@ -110,6 +109,7 @@ There are a few other tags that are needed in special situations for example whe
 
 The tag enables you to specify an author for a class or member. This can be useful in larger project with multiple developers.
 
+===== Example of author tag ====
 {{{
 /**
  * This method is static. 
@@ -125,6 +125,7 @@ SomeClass.someMethod = function() {
 
 Specifies that the method is a constructor for the class.
 
+===== Example of constructor tag ====
 {{{
 /**
  * This method is the constructor for a class. 
@@ -140,6 +141,7 @@ SomeClass.constructor.SomeClass = function() {
 
 This tag enables you to set classes/members to be deprecated. You can specify an message to be presented to the user in the documentation for example why it's deprecated and what they should use in instead.
 
+===== Example of deprecated tag ====
 {{{
 /**
  * This method is deprecated. 
@@ -155,15 +157,33 @@ SomeClass.someMethod = function() {
 
 This tag specifies that the class extends another class.
 
+===== Example of extends tag ====
 {{{
 /**
- * This is a subclass. 
+ * This is a subclass of SuperClass. 
+ *
+ * @class SubClass
+ * @extends SuperClass
+ */
+SubClass = SuperClass.extend({
+   ...
+}
+}}}
+
+==== member ====
+
+The member tag can be used to tell that a specific method/property/event is part of a specific class. For example if there is a method that gets added later on in a separate file.
+
+===== Example of member tag ====
+{{{
+/**
+ * This method is static. 
  *
  * @method someMethod
- * @deprecated This is a old method use something else.
+ * @member someNameSpace.someClass
  */
-SomeClass.pro.someMethod = function() {
-}
+someNameSpace.someClass.someMethod = function() {
+};
 }}}
 
 ==== static ====
@@ -182,18 +202,17 @@ someClass.staticMethod = function() {
 };
 }}}
 
-==== member ====
+==== type ====
 
-The member tag can be used to tell that a specific method/property/event is part of a specific class. For example if there is a method that gets added later on in a separate file.
+This tag enables you to specify a type for a property. By default the type of a property will be Object.
 
-===== Example of member method ====
+===== Example of type tag ====
 {{{
 /**
  * This method is static. 
  *
- * @method someMethod
- * @member someNameSpace.someClass
+ * @property someProp
+ * @type String
  */
-someNameSpace.someClass.someMethod = function() {
-};
+someClass.someProp = "";
 }}}
