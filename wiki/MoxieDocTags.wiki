@@ -35,6 +35,7 @@ There are a few other tags that are needed in special situations for example whe
 || [http://code.google.com/p/js-build-tools/wiki/AuthorTag author]            || Enables you to specify an author for a class or member. ||
 || [http://code.google.com/p/js-build-tools/wiki/ConstructorTag constructor]  || Specifies that the method is a contructor. ||
 || [http://code.google.com/p/js-build-tools/wiki/DeprecatedTag deprecated]    || Specifies that the member or class is old and shouldn't be used. ||
+|| [http://code.google.com/p/js-build-tools/wiki/ExampleTag example]          || Generates an example of usage. ||
 || [http://code.google.com/p/js-build-tools/wiki/ExtendsTag extends]          || Enables you to specify an inheritance between two classes. ||
 || [http://code.google.com/p/js-build-tools/wiki/MemberTag member]            || Enables you to specify that the member if part of another class. ||
 || [http://code.google.com/p/js-build-tools/wiki/StaticTag static]            || Sets that the member or class is static. ||
