@@ -38,6 +38,7 @@ There are a few other tags that are needed in special situations for example whe
 || [http://code.google.com/p/js-build-tools/wiki/ExampleTag example]          || Generates an example of usage. ||
 || [http://code.google.com/p/js-build-tools/wiki/ExtendsTag extends]          || Enables you to specify an inheritance between two classes. ||
 || [http://code.google.com/p/js-build-tools/wiki/MemberTag member]            || Enables you to specify that the member if part of another class. ||
+|| [http://code.google.com/p/js-build-tools/wiki/See see]            || Enables you to reference other classes/members. ||
 || [http://code.google.com/p/js-build-tools/wiki/StaticTag static]            || Sets that the member or class is static. ||
 || [http://code.google.com/p/js-build-tools/wiki/TypeTag type]                || Specifies the property type. ||
 || [http://code.google.com/p/js-build-tools/wiki/VersionTag version]          || Enables you to set a version number when the item was introduced. ||
