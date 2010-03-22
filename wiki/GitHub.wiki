@@ -1,0 +1,4 @@
+= GitHub =
+
+This project has been moved to GitHub.
+[http://github.com/moxiecode/js-build-tools js-build-tools]
